@@ -1,0 +1,38 @@
+class Solution {
+public:
+    string simplifyPath(string path) {
+        vector<string> pathStack;  // Stack to store the path
+        string dirName = "";  // String to store the name of the directory
+
+        path = path + "/";  // Add a trailing slash to the path for easier parsing
+
+        // Iterate over each character in the path
+        for (int i = 1; i < path.size(); i++) {
+            if (path[i] == '/') {
+                if (dirName == "..") {  // If directory name is '..', remove the last directory from the stack
+                    if (!pathStack.empty())
+                        pathStack.pop_back();
+                    dirName = "";
+                } else if (dirName == ".") {  // If directory name is '.', ignore it
+                    dirName = "";
+                } else if (dirName != "") {  // If directory name is not empty, add it to the stack
+                    pathStack.push_back(dirName);
+                    dirName = "";
+                }
+            } else {
+                dirName += path[i];  // Append characters to the directory name
+            }
+        }
+
+        string simplifiedPath = "";
+        for (auto dir : pathStack) {
+            simplifiedPath += "/" + dir;  // Concatenate directories to form the simplified path
+        }
+
+        if (simplifiedPath == "") {
+            simplifiedPath = "/";  // If simplified path is empty, set it to root '/'
+        }
+
+        return simplifiedPath;
+    }
+};
