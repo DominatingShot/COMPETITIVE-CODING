@@ -1,0 +1,42 @@
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        roamn =""
+        if(num>=1000):
+            roamn+="M"*(num//1000)
+            num%=1000
+        if(num>=900):
+            roamn+="CM"
+            num%=900
+        if(num>=500):
+            roamn+="D"
+            num%=500
+        if(num>=400):
+            roamn+="CD"
+            num%=400
+        if(num>=100):
+            roamn+="C"*(num//100)
+            num%=100
+        if(num>=90):
+            roamn+="XC"
+            num%=90
+        if(num>=50):
+            roamn+="L"
+            num%=50
+        if(num>=40):
+            roamn+="XL"
+            num%=40
+        if(num>=10):
+            roamn+="X"*(num//10)
+            num%=10
+        if(num>=9):
+            roamn+="IX"
+            num%=9
+        if(num>=5):
+            roamn+="V"
+            num%=5
+        if(num>=4):
+            roamn+="IV"
+            num%=4
+        if(num>=1):
+            roamn+="I"*num
+        return roamn
