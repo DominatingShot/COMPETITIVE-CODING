@@ -1,0 +1,20 @@
+class Solution {
+    List<Integer> l = new ArrayList<>();
+    
+    public List<Integer> preorderTraversal(TreeNode root) {
+        // If the root is null, return the empty list
+        if (root == null) {
+            return l;
+        }
+        
+        // Add the value of the current node to the list
+        l.add(root.val);
+        
+        // Recursively traverse the left and right subtrees in preorder
+        preorderTraversal(root.left);
+        preorderTraversal(root.right);
+        
+        // Return the list containing the preorder traversal
+        return l;
+    }
+}
