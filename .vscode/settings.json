@@ -112,6 +112,9 @@
     "valarray": "cpp",
     "variant": "cpp",
     "ranges": "cpp",
-    "span": "cpp"
+    "span": "cpp",
+    "barrier": "cpp",
+    "latch": "cpp",
+    "semaphore": "cpp"
   }
 }
