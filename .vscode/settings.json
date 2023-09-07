@@ -115,6 +115,8 @@
     "span": "cpp",
     "barrier": "cpp",
     "latch": "cpp",
-    "semaphore": "cpp"
+    "semaphore": "cpp",
+    "stop_token": "cpp",
+    "syncstream": "cpp"
   }
 }

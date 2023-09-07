@@ -9,6 +9,5 @@ public:
         v.assign(nums.end()-k, nums.end()); //assign the last k elements of the vector to the rotated vector
         v.insert(v.end(), nums.begin(), nums.end()-k); //insert the first n-k elements of the vector to the rotated vector
         nums = v; //assign the rotated vector to the original vector
-        
     }
 };
